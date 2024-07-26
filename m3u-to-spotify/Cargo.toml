@@ -1,0 +1,17 @@
+[package]
+name = "m3u-to-spotify"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+m3u.workspace = true
+id3.workspace = true
+rspotify.workspace = true
+uuid.workspace = true
+clap.workspace = true
+
+[lints]
+workspace = true

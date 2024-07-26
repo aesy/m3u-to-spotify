@@ -1,0 +1,23 @@
+[package]
+name = "m3u-to-spotify-cli"
+description = ""
+homepage = "https://github.com/aesy/m3u-to-spotify"
+repository = "https://github.com/aesy/m3u-to-spotify"
+license-file = "../LICENSE"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+
+[dependencies]
+m3u-to-spotify = { path = "../m3u-to-spotify" }
+rspotify = { workspace = true, features = ["cli"] }
+clap.workspace = true
+indicatif.workspace = true
+
+[lints]
+workspace = true
+
+[[bin]]
+name = "m3u-to-spotify"
+path = "src/main.rs"
