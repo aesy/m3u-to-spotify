@@ -3,13 +3,13 @@ use std::path::PathBuf;
 use clap::Parser;
 use clap::ValueHint;
 
-/// Tool for migrating/converting m3u/m3u8 playlists to Spotify.
+/// Tool for exporting m3u/m3u8 playlists to Spotify.
 ///
-/// This program reads a music playlist of type m3u or m3u3 (extended utf8-encoded m3u) to
-/// search for each song on Spotify and adding it to a playlist. The search is enhanced by
-/// using the id3 tags of the music file, if possible.
+/// This program reads a music playlist of type m3u or m3u8 (extended utf8-encoded m3u) to
+/// search for each song on Spotify and adding it to a Spotify playlist. The search is enhanced
+/// by using the id3 tags of the music file, if possible.
 ///
-/// The result (whether a song was found/added or not) and errors are printed to stderr.
+/// The result (whether a song was found/added or not) is printed to stdout and errors to stderr.
 #[derive(Parser, Debug)]
 #[command(name = "m3u-to-spotify", version, verbatim_doc_comment)]
 pub struct Args {
@@ -25,7 +25,7 @@ pub struct Args {
     #[arg(long = "redirect-url", env = "REDIRECT_URL", verbatim_doc_comment)]
     pub redirect_url: String,
 
-    /// The path to the m3u/m3u8 file to migrate/convert.
+    /// The path to the m3u/m3u8 file to export.
     #[arg(
         long = "playlist-path",
         env = "PLAYLIST_PATH",
@@ -35,7 +35,7 @@ pub struct Args {
     )]
     pub playlist_path: PathBuf,
 
-    /// The name of the playlist to create and add all songs to.
+    /// The name of the Spotify playlist to create and add all songs to.
     ///
     /// A new playlist is created even if a playlist of the same name already exists.
     #[arg(

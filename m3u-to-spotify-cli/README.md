@@ -9,15 +9,15 @@ m3u-to-spotify --help
 ```
 
 ```
-Tool for migrating/converting m3u/m3u8 playlists to Spotify.
+Tool for exporting m3u/m3u8 playlists to Spotify.
 
-This program reads a music playlist of type m3u or m3u3 (extended utf8-encoded m3u) to
-search for each song on Spotify and adding it to a playlist. The search is enhanced by
-using the id3 tags of the music file, if possible.
+This program reads a music playlist of type m3u or m3u8 (extended utf8-encoded m3u) to
+search for each song on Spotify and adding it to a Spotify playlist. The search is enhanced
+by using the id3 tags of the music file, if possible.
 
-The result (whether a song was found/added or not) and errors are printed to stderr.
+The result (whether a song was found/added or not) is printed to stdout and errors to stderr.
 
-Usage: m3u-to-spotify.exe [OPTIONS] --client-id <CLIENT_ID> --client-secret <CLIENT_SECRET> --redirect-url <REDIRECT_URL> --playlist-path <FILE>
+Usage: m3u-to-spotify [OPTIONS] --client-id <CLIENT_ID> --client-secret <CLIENT_SECRET> --redirect-url <REDIRECT_URL> --playlist-path <FILE>
 
 Options:
       --client-id <CLIENT_ID>
@@ -36,12 +36,12 @@ Options:
           [env: REDIRECT_URL=]
 
       --playlist-path <FILE>
-          The path to the m3u/m3u8 file to migrate/convert.
+          The path to the m3u/m3u8 file to export.
 
           [env: PLAYLIST_PATH=]
 
       --playlist-name <PLAYLIST_NAME>
-          The name of the playlist to create and add all songs to.
+          The name of the Spotify playlist to create and add all songs to.
 
           A new playlist is created even if a playlist of the same name already exists.
 
@@ -59,12 +59,12 @@ Options:
 
 As you may have noticed, in order to use the CLI you need to provide a client ID, client secret and a redirect URL.
 This information can be obtained by logging into the
-[Spotify Developer console](https://developer.spotify.com/dashboard/login) and creating app. Add any name and
+[Spotify Developer console](https://developer.spotify.com/dashboard/login) and creating an app. Add any name and
 description you like and a local URL to the list of redirect URIs, for example http://localhost:3000. Also make sure to
 check "Web API" under "APIs used".
 
 Once saved, the Client ID and Client secret can be found under "Basic information". Use the same redirect URL as the one
-you added previously.
+you provided previously.
 
 ## Installation:
 

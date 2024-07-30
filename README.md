@@ -9,7 +9,7 @@
 
 [license-url]: https://github.com/aesy/m3u-to-spotify/blob/master/LICENSE
 
-A Windows/Linux CLI tool for migrating/converting m3u/m3u8 playlists to Spotify.
+A Windows/Linux CLI tool for exporting m3u/m3u8 playlists to Spotify.
 
 ## Usage
 

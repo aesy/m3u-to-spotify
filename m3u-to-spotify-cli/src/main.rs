@@ -30,7 +30,7 @@ fn main() -> ExitCode {
     };
 
     while let Err(e) = spotify.prompt_for_token(&url) {
-        eprintln!("Failed to get token from URL. Please try again. '{e}'");
+        println!("Failed to get token from URL. Please try again. '{e}'");
     }
 
     let user = match spotify.me() {
@@ -74,11 +74,11 @@ fn main() -> ExitCode {
 
         match spotify::search_track(&spotify, &info) {
             Ok(Some(track)) => {
-                eprintln!("Found '{}' for track '{path}'", track.name);
+                println!("Found '{}' for track '{path}'", track.name);
                 buffer.push(track);
             },
             Ok(None) => {
-                eprintln!("No results found for track '{path}''");
+                println!("No results found for track '{path}''");
             },
             Err(e) => {
                 eprintln!("Failed to search to track '{path}': '{e}''");
@@ -103,7 +103,7 @@ fn main() -> ExitCode {
         buffer.clear();
     }
 
-    eprintln!("Done!\nAll tracks found has been added to playlist '{playlist_name}'!");
+    println!("Done!\nAll tracks found has been added to playlist '{playlist_name}'!");
 
     ExitCode::SUCCESS
 }
